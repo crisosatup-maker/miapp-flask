@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h2>Sale</h2>
+    <div class="sale">
+        {% for producto in productos %}
+            <div class="sale">
+                <img src="{{ url_for('static', filename=producto.imagen) }}" alt="{{ producto.nombre }}">
+                <p>{{ producto.nombre }}</p>
+                <p>{{ producto.precio }}</p>
+                <button>Agregar al carrito</button>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+  let carrito = [];
+
+  // Cargar el carrito desde localStorage al abrir la página
+  window.onload = function() {
+    const guardado = localStorage.getItem("carrito");
+    if (guardado) {
+      carrito = JSON.parse(guardado);
+      mostrarCarrito();
+    }
+  };
+
+  function guardarCarrito() {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+
+  function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    guardarCarrito();
+    mostrarCarrito();
+  }
+
+  function mostrarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    if (!lista) return; // por si una página no tiene carrito visible
+    lista.innerHTML = "";
+
+    carrito.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${item.nombre} - ${item.precio}`;
+
+      const btnEliminar = document.createElement("button");
+      btnEliminar.textContent = "❌";
+      btnEliminar.style.border = "none";
+      btnEliminar.style.background = "transparent";
+      btnEliminar.style.cursor = "pointer";
+      btnEliminar.onclick = () => eliminarDelCarrito(index);
+
+      li.appendChild(btnEliminar);
+      lista.appendChild(li);
+    });
+  }
+
+  function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    guardarCarrito();
+    mostrarCarrito();
+  }
+
+  function realizarCompra() {
+    if (carrito.length === 0) {
+      alert("Tu carrito está vacío 😅");
+      return;
+    }
+
+    let mensaje = "Hola! Quisiera comprar los siguientes productos:%0A%0A";
+    carrito.forEach((item, i) => {
+      mensaje += `${i + 1}. ${item.nombre} - ${item.precio}%0A`;
+    });
+
+    const telefono = "5491122334455"; // Cambiá por el número del vendedor
+    const url = `https://wa.me/${telefono}?text=${mensaje}`;
+    window.open(url, "_blank");
+  }
+</script>
+{% endblock %}

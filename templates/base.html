@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Medialu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='imagenes/logo.jpg') }}" type="header-logo">
+</head>
+<body>
+    <header  class="header-logo-fondo" >
+        <div class="header-superior">
+             <h1 class="nombre-local">Medialu</h1>
+             <img src="{{ url_for('static', filename='imagenes/logo.jpg') }}" alt="Logo Medialu" class="header-logo">
+              
+        </div>
+
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a>
+            <a href="{{ url_for('medias') }}">Medias</a>
+            <a href="{{ url_for('pijamas') }}">Pijamas</a>
+            <a href="{{ url_for('sale') }}">SALE</a>
+           
+        </nav>
+    </header>
+
+    <main>
+        
+     {% block content %} {% endblock %}
+
+     
+
+    <section id="carrito">
+      <h2>🛒 Mi Carrito</h2>
+      <ul id="lista-carrito"></ul>
+      <button id="boton-compra" onclick="realizarCompra()">Realizar compra</button>
+    </section>
+    </main>
+    <script>
+  let carrito = [];
+
+  // Cargar el carrito desde localStorage al abrir la página
+  window.onload = function() {
+    const guardado = localStorage.getItem("carrito");
+    if (guardado) {
+      carrito = JSON.parse(guardado);
+      mostrarCarrito();
+    }
+  };
+
+  function guardarCarrito() {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+
+  function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    guardarCarrito();
+    mostrarCarrito();
+  }
+
+  function mostrarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    if (!lista) return; // por si una página no tiene carrito visible
+    lista.innerHTML = "";
+
+    carrito.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${item.nombre} - ${item.precio}`;
+
+      const btnEliminar = document.createElement("button");
+      btnEliminar.textContent = "❌";
+      btnEliminar.style.border = "none";
+      btnEliminar.style.background = "transparent";
+      btnEliminar.style.cursor = "pointer";
+      btnEliminar.onclick = () => eliminarDelCarrito(index);
+
+      li.appendChild(btnEliminar);
+      lista.appendChild(li);
+    });
+  }
+
+  function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    guardarCarrito();
+    mostrarCarrito();
+  }
+
+  function realizarCompra() {
+    if (carrito.length === 0) {
+      alert("Tu carrito está vacío 😅");
+      return;
+    }
+
+    let mensaje = "Hola! Quisiera comprar los siguientes productos:%0A%0A";
+    carrito.forEach((item, i) => {
+      mensaje += `${i + 1}. ${item.nombre} - ${item.precio}%0A`;
+    });
+
+    const telefono = "5491122334455"; // Cambiá por el número del vendedor
+    const url = `https://wa.me/${telefono}?text=${mensaje}`;
+    window.open(url, "_blank");
+  }
+</script>
+</body>
+
+</html>
+

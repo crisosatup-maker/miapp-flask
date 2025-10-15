@@ -1,0 +1,286 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header { /*margen superior rosa*/
+    color: purple;
+    background-color:white;
+    padding: 10px;
+   
+@media (max-width: 768px) {    
+}
+/* Franja superior: Medialu izquierda, logo derecha */
+.header-superior {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;      /* centra verticalmente */
+  padding: 0 40px;
+  height: 150px;
+  background-color: white;
+
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo-fondo {
+    background: palevioletred url('{{ url_for("static", filename="imagen/logo.png") }}') no-repeat center center;
+    background-size: contain; /* o cover si querés que se estire */
+    height: 100px; /* podés ajustar este valor */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* para que el nav quede abajo */
+    color: purple;
+}
+s
+
+.logo-nombre {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* espacio entre el logo y el texto */
+}
+
+.header-logo {
+    width: 100px;
+    max-height: 160px;
+    height: auto;
+    object-fit: scale-down;
+    margin-top: 5px;
+}
+
+.nombre-local {
+  font-size: 40px; /* tamaño del texto "Medialu" */
+  color: #ff6961;
+  font-weight: bold;
+  margin: 0;
+  align-self: center;
+}
+
+nav {
+    text-align: center;
+    /*margin-top: 10px;*/
+    background-color:#ff6961; /* para que sea del mismo color */
+    padding-bottom: 20px 0 25px;
+
+}
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin:0 25x;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.inicio-banner {
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('{{ url_for("static", filename="img/logo.png") }}') no-repeat right center;
+    background-size: 200px;
+    padding: 80px 20px;
+    text-align: left;
+    background-color: white; 
+    background-image: none;
+}
+
+.inicio-texto h2 {
+    font-size: 36px;
+    color: black;
+    
+}
+
+.inicio-texto p {
+    font-size: 18px;
+    color: #ff6961;
+    
+}
+
+.boton-banner {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: palevioletred;
+    color:pink;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.boton-banner:hover {
+    background-color: #d65c85;
+}
+
+/* Productos */
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.producto {
+    background-color: pink;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+ #carrito {
+      background-color: #fff;
+      border: 2px solid #77dd77;
+      border-radius: 10px;
+      margin: 30px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    #carrito h2 {
+      text-align: center;
+      color:#77dd77;
+    }
+
+    #lista-carrito {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    #lista-carrito li {
+      border-bottom: 1px solid #ddd;
+      padding: 5px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #boton-compra {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color:#77dd77;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #boton-compra:hover {
+      background-color:#77dd77;
+    }
+
+button {
+    background-color: #333;
+    color:#fdcae1;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+button:hover {
+    background-color:white;
+}
+
+h2 {
+  text-align: center;
+  color: #ff6961;
+  font-size: 32px;
+  margin-top: 30px;
+} 
+ /*tarjeta descripcion*/
+
+.categoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* espacio entre los modelos */
+  padding: 40px 20px;
+}
+
+.modelo {
+  background-color: #fff5f5;
+  border: 2px solid #ffb6b6;
+  border-radius: 15px;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.modelo-descripcion {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.modelo-descripcion h3 {
+  color: #ff6961;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.modelo-descripcion p {
+  color: #555;
+  font-size: 16px;
+}
+
+.modelo-fotos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.modelo-fotos img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s;
+}
+
+.modelo-fotos img:hover {
+  transform: scale(1.05);
+}
+/*---------------------------*/
+.mini-menu {
+            background: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .mini-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        .mini-menu li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .modelos-lista div {
+            margin-bottom: 30px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
