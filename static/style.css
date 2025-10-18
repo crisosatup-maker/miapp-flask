@@ -10,9 +10,9 @@ header { /*margen superior rosa*/
     color: purple;
     background-color:white;
     padding: 10px;
-   
-@media (max-width: 768px) {    
 }
+@media (max-width: 768px) {    
+
 /* Franja superior: Medialu izquierda, logo derecha */
 .header-superior {
   display: flex;
@@ -69,7 +69,7 @@ nav {
     padding-bottom: 40px 0 45px;
 
 }
-}
+
 
 nav a {
     color:black; /*INICIO MEDIAS PIJAMA SALE*/
@@ -327,12 +327,6 @@ h6 {
 
 /*fin menu flotante*/
 
-
-
-
-
-
-
         /*FRANJA NOVEDADES*/
         /* Estructura principal del inicio */
 .inicio {
@@ -386,7 +380,7 @@ h6 {
 }
 
 .franja-nuevos h3 {
-  color:white;
+  color:grey;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -404,13 +398,13 @@ h6 {
   
 }
 .franja-promo h3 {
-  color:white;
+  color:grey;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .link-promo {
-  color: white;
+  color:grey;
   text-decoration: none;
 }
 .link-promo:hover {
@@ -467,13 +461,14 @@ h6 {
 
 h7{
   text-align: center;
-  color:#ff85d5;
+  color: grey;
   top: 100px;        /* desde arriba */
   left: 20px;        /* desde la izquierda */
-  background-color:white; /* fondo opcional */
-  border:  5px solid #ff85d5;
+  background-color: #b0f2c2; /* fondo opcional */
+  border:  5px solid grey;
   border-radius: 10px;
   padding: 10px;
   font-size:15px;
   margin-top: 30px;
    }
+  }     
