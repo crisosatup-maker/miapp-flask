@@ -72,7 +72,7 @@ nav {
 }
 
 nav a {
-    color: white; /*INICIO MEDIAS PIJAMA SALE*/
+    color:black; /*INICIO MEDIAS PIJAMA SALE*/
     text-decoration: none;
     margin:0 25x;
     padding: 10px 15px;
@@ -363,14 +363,22 @@ h6 {
 }
 
 /* Franja de nuevos productos */
+.contenedor-franjas {
+  display: flex;
+  flex-direction: column; /* 🔹 apila verticalmente */
+  align-items: center;    /* 🔹 centra horizontalmente */
+  gap: 20px;              /* 🔹 espacio entre franja-nuevos y franja-promo */
+  margin-top: 20px;       /* opcional: separación con lo de arriba */
+}
+
+
 .franja-nuevos {
   background-color:#ffb7c3;
   padding: 20px;
   border-radius: 20px;
   width: 300px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -382,6 +390,33 @@ h6 {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+.franja-promo {
+  background-color:#b0f2c2;
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.franja-promo h3 {
+  color:white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.link-promo {
+  color: white;
+  text-decoration: none;
+}
+.link-promo:hover {
+  text-decoration: underline; /* opcional */
+}
+
 
 /* Carrusel */
 .slider {

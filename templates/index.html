@@ -3,7 +3,7 @@
 {% block content %}
 <section class="inicio">
     <div class="texto-inicio">
-        <h2>Bienvenidos a Medialu 🌙</h2>
+        <h2>Bienvenidos a Medialú 🌙</h2>
         <p>¡Hola!
             Nuestro emprendimiento nació después de la pandemia, con una pequeña inversión y mucha ilusión: empezamos con una docena de medias y el sueño de crecer paso a paso. Con el tiempo fuimos participando en ferias de emprendedores, conociendo a más personas y ampliando nuestra familia de clientes.
             Gracias al esfuerzo y al apoyo de todos, hoy contamos con nuestro propio showroom y stock permanente de productos.
@@ -12,19 +12,35 @@
             También realizamos ventas online, para que puedas elegir cómodamente el producto, modelo y talle que más te guste, y nosotros nos encargamos del resto.
             Somos una familia emprendedora que sigue creciendo día a día, con el compromiso de brindarte lo mejor en productos y atención. 💛
 
-        <p>📍 Dirección: Calle Falsa 123, Ciudad</p>
-        <p>📞 Teléfono: 1234-5678</p>
+        <p>📍 Dirección: Hipólito irigoyen 1380 oeste</p>
+
+        <p>📞 Celular: 1234-5678</p>
+        
+        <p>💵 Formas de pago: Efectivo, Mercado Pago</p>
+
+        <p>🚗 Hacemos envío a domicilio</p>     
+
         <a href="https://www.instagram.com/medialu_/">Ir a instagram</a>
     </div>
 
-
- <div class="franja-nuevos">
-    <h3>¡Nuevo ingreso!</h3>
+<div class="contenedor-franjas">
+  <div class="franja-nuevos">
+    <h3>❤️‍🔥¡Nuevo ingreso!❤️‍🔥</h3>
     <div class="slider">
       <img src="{{ url_for('static', filename='imagenes/pcamiserokitty1.jpg') }}" alt="Nuevo producto 1">
       <img src="{{ url_for('static', filename='imagenes/pcamiserolilo2.jpg') }}" alt="Nuevo producto 2">
       <img src="{{ url_for('static', filename='imagenes/pcamiserocorazon1.jpg') }}" alt="Nuevo producto 3">
     </div>
   </div>
+
+  <div class="franja-promo">
+    <h3><a href="{{ url_for('sale') }}" class="link-promo">¡Promo!🚀</a></h3>
+    <div class="slider">
+      <img src="{{ url_for('static', filename='imagenes/pcamiserokitty1.jpg') }}" alt="Nuevo producto 1">
+      <img src="{{ url_for('static', filename='imagenes/pcamiserolilo2.jpg') }}" alt="Nuevo producto 2">
+      <img src="{{ url_for('static', filename='imagenes/pcamiserocorazon1.jpg') }}" alt="Nuevo producto 3">
+    </div>
+  </div>
+</div>  
 </section>
 {% endblock %}
