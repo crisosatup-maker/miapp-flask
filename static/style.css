@@ -11,7 +11,7 @@ header { /*margen superior rosa*/
     background-color:white;
     padding: 10px;
 }
-@media (max-width: 768px) {    
+   
 
 /* Franja superior: Medialu izquierda, logo derecha */
 .header-superior {
@@ -471,4 +471,4 @@ h7{
   font-size:15px;
   margin-top: 30px;
    }
-  }     
+  
