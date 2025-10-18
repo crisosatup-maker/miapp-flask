@@ -1,6 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, make_response
+
+import os
 
 app = Flask(__name__)
+
+ 
 
 @app.route('/')
 def index():
@@ -120,8 +124,8 @@ def pijamas():
         },
         
         {
-            "nombretitulo":"Pijama de modal con lycra premium MANGA CORTA + SHORT",
-            "descripcion":"Pantalón elastizado en la cintura.\n Remera y pantalón corte unisex (para hombre y mujer).",
+            "nombretitulo":"Pijama MANGA CORTA + SHORT",
+            "descripcion":"Pijama de modal con lycra premium.Pantalón elastizado en la cintura.\n Remera y pantalón corte unisex (para hombre y mujer).",
             "talles":"Talles reales del 1 al 7",
             "productos":[
                 {"nombre": "Pijama Hello Kitty", "imagen": "imagenes/pcortokitty.jpg", "precio": "$3,000"},
@@ -147,8 +151,8 @@ def pijamas():
         },
 
         {
-            "nombretitulo":"Pijama de modal con lycra premium MANGA CORTA + PANTALÓN",
-            "descripcion":"Pantalón elastizado en la cintura y en el largo de las piernas, con bolsillos.\n Remera y pantalón corte unisex (para hombre y mujer).",
+            "nombretitulo":"Pijama MANGA CORTA + PANTALÓN",
+            "descripcion":"Pijama de modal con lycra premium.Pantalón elastizado en la cintura y en el largo de las piernas, con bolsillos.\n Remera y pantalón corte unisex (para hombre y mujer).",
             "talles":"Talles reales del 38 al 52",
             "productos":[
                 {"nombre": "Pijama Mickey", "imagen": "imagenes/pmickey1.jpg", "precio": "$3,000"},
@@ -167,6 +171,8 @@ def pijamas():
         
     ]
     return render_template('pijamas.html', modelos=modelos_pijamas)
+
+
 
 
 

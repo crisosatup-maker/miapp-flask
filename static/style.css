@@ -1,7 +1,7 @@
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+body { /*es donde esta el carrito*/
+    font-family: Arial,  sans-serif;
+    background-color:white;
     margin: 0;
     padding: 0;
 }
@@ -20,7 +20,7 @@ header { /*margen superior rosa*/
   align-items: center;      /* centra verticalmente */
   padding: 0 40px;
   height: 150px;
-  background-color: white;
+  background-color: white; /*color blanco donde esta el logo*/
 
 }
 
@@ -39,7 +39,6 @@ header { /*margen superior rosa*/
     justify-content: flex-end; /* para que el nav quede abajo */
     color: purple;
 }
-s
 
 .logo-nombre {
   display: flex;
@@ -50,7 +49,7 @@ s
 .header-logo {
     width: 100px;
     max-height: 160px;
-    height: auto;
+    height: 100;
     object-fit: scale-down;
     margin-top: 5px;
 }
@@ -66,14 +65,14 @@ s
 nav {
     text-align: center;
     /*margin-top: 10px;*/
-    background-color:#ff6961; /* para que sea del mismo color */
-    padding-bottom: 20px 0 25px;
+    background-color: #ffb7c3; /* para que sea del mismo color */
+    padding-bottom: 40px 0 45px;
 
 }
 }
 
 nav a {
-    color: white;
+    color: white; /*INICIO MEDIAS PIJAMA SALE*/
     text-decoration: none;
     margin:0 25x;
     padding: 10px 15px;
@@ -87,14 +86,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-.inicio-banner {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('{{ url_for("static", filename="img/logo.png") }}') no-repeat right center;
-    background-size: 200px;
-    padding: 80px 20px;
-    text-align: left;
-    background-color: white; 
-    background-image: none;
-}
 
 .inicio-texto h2 {
     font-size: 36px;
@@ -104,9 +95,11 @@ nav a:hover {
 
 .inicio-texto p {
     font-size: 18px;
-    color: #ff6961;
+    color: white;
+    
     
 }
+
 
 .boton-banner {
     display: inline-block;
@@ -145,20 +138,27 @@ nav a:hover {
     height: auto;
     border-radius: 5px;
 }
-
+/*---------------CARRITO-------------*/
  #carrito {
-      background-color: #fff;
-      border: 2px solid #77dd77;
-      border-radius: 10px;
-      margin: 30px auto;
-      padding: 20px;
-      width: 90%;
-      max-width: 500px;
+    position: fixed;      /* Siempre visible */
+    top: 100px;           /* A partir de 100px desde arriba */
+    right: 20px;          /* A 20px del borde derecho */
+    width: 200px;         /* Ancho del carrito */
+    max-height: 400px;    /* Para que no ocupe toda la pantalla */
+    overflow-y: auto;     /* Scroll si hay muchos productos */
+    background-color: #fff;
+    border: 2px solid#b0c2f2;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1000;  
     }
 
-    #carrito h2 {
+    #carrito h1 {
       text-align: center;
-      color:#77dd77;
+      color:#b0c2f2;
+      margin-bottom: 5px;
+      font-size: 20px;
     }
 
     #lista-carrito {
@@ -169,7 +169,7 @@ nav a:hover {
 
     #lista-carrito li {
       border-bottom: 1px solid #ddd;
-      padding: 5px 0;
+      margin-bottom: 5px 0;
       display: flex;
       justify-content: space-between;
     }
@@ -178,7 +178,7 @@ nav a:hover {
       display: block;
       width: 100%;
       padding: 10px;
-      background-color:#77dd77;
+      background-color:#b0c2f2;
       color: white;
       border: none;
       border-radius: 5px;
@@ -187,7 +187,7 @@ nav a:hover {
     }
 
     #boton-compra:hover {
-      background-color:#77dd77;
+      background-color:#b0c2f2;
     }
 
 button {
@@ -207,11 +207,17 @@ button:hover {
 
 h2 {
   text-align: center;
-  color: #ff6961;
-  font-size: 32px;
+  color: #ffb7c3;
+  font-size: 20px;
   margin-top: 30px;
+  border:  5px solid #ffb7c3;
+  border-radius: 15px;
 } 
- /*tarjeta descripcion*/
+
+/*----FIN CARRITO-------*/
+
+
+ /*------tarjeta descripcion--------*/
 
 .categoria {
   display: flex;
@@ -266,21 +272,173 @@ h2 {
   transform: scale(1.05);
 }
 /*---------------------------*/
-.mini-menu {
-            background: #f2f2f2;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-        .mini-menu ul {
-            list-style: none;
-            padding: 0;
-        }
-        .mini-menu li {
-            display: inline-block;
-            margin-right: 10px;
-        }
-        .modelos-lista div {
-            margin-bottom: 30px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
+
+
+/*----------MENU FLOTANTE------------*/
+
+/* Desplazamiento suave al hacer click en los links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mini menú flotante */
+.mini-menu-flotante {
+  position: fixed;   /* fijo en la pantalla */
+  top: 150px;        /* desde arriba */
+  left: 10px;        /* desde la izquierda */
+  background-color:white; /* fondo opcional */
+  border:  5px solid #ffda9e;
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+h6 {
+  text-align: center;
+  color:gray;
+  font-size: 15px;
+  margin-top: 5px;
+} 
+
+/* Lista vertical, un item debajo del otro */
+.mini-menu-flotante ul,
+.mini-menu-inicio ul {
+  list-style-type:disc;
+  padding: 0;
+  margin: 5px;
+}
+
+.mini-menu-flotante li,
+.mini-menu-inicio li {
+  margin-bottom: 10px; /* separación entre modelos */
+}
+
+/* Links estilo simple */
+.mini-menu-flotante a,
+.mini-menu-inicio a {
+  text-decoration: none;
+  color: gray;
+}
+
+.mini-menu-flotante a:hover,
+.mini-menu-inicio a:hover {
+  color:#ffda9e;
+}
+
+/*fin menu flotante*/
+
+
+
+
+
+
+
+        /*FRANJA NOVEDADES*/
+        /* Estructura principal del inicio */
+.inicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 80px;
+  background-color:#ffe4e1;
+}
+
+/* Texto */
+.texto-inicio {
+  flex: 1;
+  max-width: 60%;
+}
+
+.texto-inicio h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #000;
+}
+
+.texto-inicio p {
+  color:grey;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Franja de nuevos productos */
+.franja-nuevos {
+  background-color:#ffb7c3;
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.franja-nuevos h3 {
+  color:white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Carrusel */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* evita que se corte la imagen */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+  opacity: 1;
+}
+
+/* Animación automática */
+@keyframes sliderAnim {
+  0% { opacity: 1; }
+  33% { opacity: 0; }
+  66% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.slider img:nth-child(1) {
+  animation: sliderAnim 9s infinite;
+}
+
+.slider img:nth-child(2) {
+  animation: sliderAnim 9s infinite;
+  animation-delay: 3s;
+}
+
+.slider img:nth-child(3) {
+  animation: sliderAnim 9s infinite;
+  animation-delay: 6s;
+}
+
+h7{
+  text-align: center;
+  color:#ff85d5;
+  top: 100px;        /* desde arriba */
+  left: 20px;        /* desde la izquierda */
+  background-color:white; /* fondo opcional */
+  border:  5px solid #ff85d5;
+  border-radius: 10px;
+  padding: 10px;
+  font-size:15px;
+  margin-top: 30px;
+   }

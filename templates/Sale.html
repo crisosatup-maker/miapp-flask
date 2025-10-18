@@ -1,19 +1,45 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h2>Sale</h2>
-    <div class="sale">
-        {% for producto in productos %}
-            <div class="sale">
-                <img src="{{ url_for('static', filename=producto.imagen) }}" alt="{{ producto.nombre }}">
-                <p>{{ producto.nombre }}</p>
-                <p>{{ producto.precio }}</p>
-                <button>Agregar al carrito</button>
-            </div>
-        {% endfor %}
-    </div>
+    <h2>SALE</h2>
+    <h7>Aquí encontrarás todas las promociones que se encuentran en nuestro Showroom</h7>
+    
+    
 
-    <script>
+{% for modelo in modelos %}
+  <section class="categoria" id="modelo-{{ loop.index }}">
+    <div class="modelo-fotos">
+      {% for producto in modelo.productos %}
+        <div class="producto">
+          <img src="{{ url_for('static', filename=producto.imagen) }}" alt="{{ producto.nombre }}">
+          <p>{{ producto.nombre }}</p>
+          <p>{{ producto.precio }}</p>
+          <div class="seleccion-talle">
+             <p>Seleccioná tu talle:</p>
+             <input type="radio" id="talle38_{{ loop.index }}" name="talle_{{ loop.index }}" value="38">
+              <label for="talle38_{{ loop.index }}">38</label>
+
+             <input type="radio" id="talle40_{{ loop.index }}" name="talle_{{ loop.index }}" value="40">
+             <label for="talle40_{{ loop.index }}">40</label>
+
+             <input type="radio" id="talle42_{{ loop.index }}" name="talle_{{ loop.index }}" value="42">
+             <label for="talle42_{{ loop.index }}">42</label>
+           </div>
+
+          <button onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}','talle_{{ loop.index }}' )">Agregar al carrito
+          </button>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{% endfor %}
+
+
+
+<script>
   let carrito = [];
 
   // Cargar el carrito desde localStorage al abrir la página
@@ -29,8 +55,15 @@
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }
 
-  function agregarAlCarrito(nombre, precio) {
-    carrito.push({ nombre, precio });
+  function agregarAlCarrito(nombre, precio, grupoTalle){
+    const talleSeleccionado = document.querySelector(`input[name="${grupoTalle}"]:checked`);
+  
+    if (!talleSeleccionado) {
+      alert("Por favor seleccioná un talle 😅");
+      return;
+    }
+    
+    carrito.push({ nombre, precio,talle: talleSeleccionado.value  });
     guardarCarrito();
     mostrarCarrito();
   }
@@ -42,7 +75,7 @@
 
     carrito.forEach((item, index) => {
       const li = document.createElement("li");
-      li.textContent = `${item.nombre} - ${item.precio}`;
+      li.textContent = `${item.nombre} - ${item.precio} - Talle: ${item.talle}`;
 
       const btnEliminar = document.createElement("button");
       btnEliminar.textContent = "❌";
@@ -70,7 +103,7 @@
 
     let mensaje = "Hola! Quisiera comprar los siguientes productos:%0A%0A";
     carrito.forEach((item, i) => {
-      mensaje += `${i + 1}. ${item.nombre} - ${item.precio}%0A`;
+      mensaje += `${1}. ${item.nombre} - ${item.precio}%0A - ${item.talle} .`;
     });
 
     const telefono = "5491122334455"; // Cambiá por el número del vendedor

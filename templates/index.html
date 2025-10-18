@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="inicio-banner">
-    <div class="inicio-texto">
+<section class="inicio">
+    <div class="texto-inicio">
         <h2>Bienvenidos a Medialu 🌙</h2>
         <p>¡Hola!
             Nuestro emprendimiento nació después de la pandemia, con una pequeña inversión y mucha ilusión: empezamos con una docena de medias y el sueño de crecer paso a paso. Con el tiempo fuimos participando en ferias de emprendedores, conociendo a más personas y ampliando nuestra familia de clientes.
@@ -16,5 +16,15 @@
         <p>📞 Teléfono: 1234-5678</p>
         <a href="https://www.instagram.com/medialu_/">Ir a instagram</a>
     </div>
-</div>
+
+
+ <div class="franja-nuevos">
+    <h3>¡Nuevo ingreso!</h3>
+    <div class="slider">
+      <img src="{{ url_for('static', filename='imagenes/pcamiserokitty1.jpg') }}" alt="Nuevo producto 1">
+      <img src="{{ url_for('static', filename='imagenes/pcamiserolilo2.jpg') }}" alt="Nuevo producto 2">
+      <img src="{{ url_for('static', filename='imagenes/pcamiserocorazon1.jpg') }}" alt="Nuevo producto 3">
+    </div>
+  </div>
+</section>
 {% endblock %}
