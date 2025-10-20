@@ -117,11 +117,14 @@ nav a:hover {
 
 /* Productos */
 .productos {
-    display: flex;
+    /*display: flex;*/
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
 }
 
 .producto {
@@ -208,7 +211,7 @@ button:hover {
 h2 {
   text-align: center;
   color: #ffb7c3;
-  font-size: 20px;
+  font-size: 20rem;
   margin-top: 30px;
   border:  5px solid #ffb7c3;
   border-radius: 15px;
@@ -363,6 +366,9 @@ h6 {
   align-items: center;    /* 🔹 centra horizontalmente */
   gap: 20px;              /* 🔹 espacio entre franja-nuevos y franja-promo */
   margin-top: 20px;       /* opcional: separación con lo de arriba */
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 
