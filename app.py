@@ -66,6 +66,36 @@ def medias():
                 {"nombre": "Blancas con lineas azules", "imagen": "imagenes/mlineas2.jpg", "precio": "$3,000"},
                 {"nombre": "Vans negras", "imagen": "imagenes/mvans.jpg", "precio": "$3,000"}
             ]
+        },
+        {            
+            "nombretitulo":"Soquetes ",
+            "descripcion":"Abarcan del 24 al 44",
+            "talles":"",
+            "productos":[
+                {"nombre": "Soquete Capybara", "imagen": "imagenes/msoquetecapybara.png", "precio": "$3,000"},
+                {"nombre": "Soquete Carlitos", "imagen": "imagenes/msoquetecarlitos.png", "precio": "$3,000"},
+                {"nombre": "Soquete Hermione - Harry Potter", "imagen": "imagenes/msoquetehermione.png", "precio": "$3,000"},
+                {"nombre": "Soquete Harry Potter", "imagen": "imagenes/msoqueteharrypotter1.png", "precio": "$3,000"},
+                {"nombre": "Soquete Boca Junior", "imagen": "imagenes/msoqueteboca.png", "precio": "$3,000"},
+                {"nombre": "Soquete River Plate", "imagen": "imagenes/msoqueteriver.png", "precio": "$3,000"},
+                {"nombre": "Soquete Lilo y Stitch, rosa y celeste ", "imagen": "imagenes/msoquetestitch1.png", "precio": "$3,000"},
+                {"nombre": "Soquete Lilo y Stitch, rosa ", "imagen": "imagenes/msoquetestitch2.png", "precio": "$3,000"},
+                {"nombre": "Soquete Lillo y Stitch, azul ", "imagen": "imagenes/msoquetestitch3.png", "precio": "$3,000"},
+                {"nombre": "Soquete Mickey Mouse - Disney", "imagen": "imagenes/msoquetemickey1.png", "precio": "$3,000"},
+                {"nombre": "Soquete Mickey Mouse blanco y negro", "imagen": "imagenes/msoquetemickey2.png", "precio": "$3,000"},
+                {"nombre": "Soquete Cerdito", "imagen": "imagenes/msoquetechanchito.png", "precio": "$3,000"},
+                {"nombre": "Soquete Jerry", "imagen": "imagenes/msoquetejerry.png", "precio": "$3,000"},
+                {"nombre": "Soquete Tom", "imagen": "imagenes/msoquetetom.png", "precio": "$3,000"},
+                {"nombre": "Soquete Mafalda", "imagen": "imagenes/msoquetemafalda.png", "precio": "$3,000"},
+                {"nombre": "Soquete Pato Lucas", "imagen": "imagenes/msoquetepatolucas.png", "precio": "$3,000"},
+                {"nombre": "Soquete Kuromi", "imagen": "imagenes/msoquetekuromi.png", "precio": "$3,000"},
+                {"nombre": "Soquete Snoopy", "imagen": "imagenes/msoquetesnoppy.png", "precio": "$3,000"},
+                {"nombre": "Soquete Escandalosos", "imagen": "imagenes/msoqueteescandalosos.png", "precio": "$3,000"},
+                {"nombre": "Soquete Garfield", "imagen": "imagenes/msoquetegarfield.png", "precio": "$3,000"},
+                {"nombre": "Soquete Sonic", "imagen": "imagenes/msoquetesonic.png", "precio": "$3,000"},
+                {"nombre": "Soquete Chicas Superpoderosas", "imagen": "imagenes/msoquetesuperpoderosas.png", "precio": "$3,000"}
+                
+            ]
         }
     ]
     return render_template('medias.html', modelos=modelos_medias)
