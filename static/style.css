@@ -1,4 +1,4 @@
-
+@media (max-width: 768px) {
 body { /*es donde esta el carrito*/
     font-family: Arial,  sans-serif;
     background-color:white;
@@ -312,7 +312,7 @@ h6 {
 .mini-menu-inicio li {
   margin-bottom: 10px; /* separación entre modelos */
 }
-
+}
 /* Links estilo simple */
 .mini-menu-flotante a,
 .mini-menu-inicio a {
