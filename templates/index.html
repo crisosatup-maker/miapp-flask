@@ -19,7 +19,7 @@
 
         <p>📞 Celular: 1234-5678</p>
         
-        <p>💵 Formas de pago: Efectivo, Mercado Pago</p>
+        <p>💵 Formas de pago: Efectivo, Mercado Pago, Tarjeta de débito y crédito</p>
 
         <p>🚗 Hacemos envío a domicilio</p>     
 
@@ -28,7 +28,7 @@
 
 
         <p2><br> <br> 💻¿Cómo realizo una compra desde la app web?📱<br> 
-         Es facil!, elige los producto que quieras agregando al carrito🛒 (recuerda seleccionar talle). Podés recorrer toda la app, ver medias, pijamas, las promos y el carrito te acompañará.
+         Es facil!, elige los producto que quieras agregando al carrito🛒. Podés recorrer toda la app, ver medias, pijamas, las promos y el carrito te acompañará.
          <br>Una vez que termines haz click en "Realizar Compra", esto abrira wsp web para enviarle directamente a Medialú tu pedido completo.
          <br>Y listo!✅ nosotros nos comunicamos con vos para coordinar la forma de pago y entrega♥️</br></br></br></p2>
     
@@ -38,20 +38,22 @@
 
 <div class="contenedor-franjas">
   <div class="franja-nuevos">
-    <h3>❤️‍🔥¡Nuevo ingreso!❤️‍🔥</h3>
+    <h3><a href="{{ url_for('novedades') }}" class="link-novedades">❤️‍🔥¡Nuevo ingreso!❤️‍🔥</a></h3>
+    <p>Hace click aqui y mira todos los modelos de conjuntos deportivos!</p>
     <div class="slider">
-      <img src="{{ url_for('static', filename='imagenes/pcamiserokitty1.jpg') }}" alt="Nuevo producto 1">
-      <img src="{{ url_for('static', filename='imagenes/pcamiserolilo2.jpg') }}" alt="Nuevo producto 2">
-      <img src="{{ url_for('static', filename='imagenes/pcamiserocorazon1.jpg') }}" alt="Nuevo producto 3">
+      <img src="{{ url_for('static', filename='imgnovedades/depo3blanco.png') }}" alt="Nuevo producto 1">
+      <img src="{{ url_for('static', filename='imgnovedades/depokittyfuccia.png') }}" alt="Nuevo producto 2">
+      <img src="{{ url_for('static', filename='imgnovedades/depobombonnegro.png') }}" alt="Nuevo producto 3">
+      <img src="{{ url_for('static', filename='imgnovedades/depobellotamarron1.png') }}" alt="Nuevo producto 3">
+
     </div>
   </div>
 
   <div class="franja-promo">
     <h3><a href="{{ url_for('sale') }}" class="link-promo">¡Promo!🚀</a></h3>
     <div class="slider">
-      <img src="{{ url_for('static', filename='imagenes/pcamiserokitty1.jpg') }}" alt="Nuevo producto 1">
-      <img src="{{ url_for('static', filename='imagenes/pcamiserolilo2.jpg') }}" alt="Nuevo producto 2">
-      <img src="{{ url_for('static', filename='imagenes/pcamiserocorazon1.jpg') }}" alt="Nuevo producto 3">
+      <img src="{{ url_for('static', filename='imgpromo/avisopromo.png') }}" alt="aviso">
+      
     </div>
   </div>
 </div>  

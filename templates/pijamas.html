@@ -1,45 +1,42 @@
 {% extends 'index.html' %}
 
 {% block content %}
-  <h2>Pijamas</h2>
+  <h2 id="pijamas">Pijamas</h2>
 
 
-<div class="mini-menu-flotante">
-  <h6>Modelos de Pijamas: <h6>
-  <ul>
-    {% for modelo in modelos %}
-      <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
-
-{% for modelo in modelos %}
-  <section class="categoria" id="modelo-{{ loop.index }}">
-    <div class="modelo-fotos">
-      {% for producto in modelo.productos %}
-        <div class="producto">
-          <img src="{{ url_for('static', filename=producto.imagen) }}" alt="{{ producto.nombre }}">
-          <p>{{ producto.nombre }}</p>
-          <p>{{ producto.precio }}</p>
-          <div class="seleccion-talle">
-             <p>Seleccioná tu talle:</p>
-             <input type="radio" id="talle38_{{ loop.index }}" name="talle_{{ loop.index }}" value="38">
-              <label for="talle38_{{ loop.index }}">38</label>
-
-             <input type="radio" id="talle40_{{ loop.index }}" name="talle_{{ loop.index }}" value="40">
-             <label for="talle40_{{ loop.index }}">40</label>
-
-             <input type="radio" id="talle42_{{ loop.index }}" name="talle_{{ loop.index }}" value="42">
-             <label for="talle42_{{ loop.index }}">42</label>
-           </div>
-
-          <button onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}','talle_{{ loop.index }}' )">Agregar al carrito
-          </button>
-        </div>
+  <div class="mini-menu-flotante">
+    <h6>Modelos de Pijamas: <h6>
+    <ul>
+      <li><a href="#pijamas">Inicio</a></li>
+      {% for modelo in modelos %}
+       <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
-</section>
+
+  {% for modelo in modelos %}
+    <section class="categoria" id="modelo-{{ loop.index }}">
+      <div class="modelo-descripcion">
+        <h3>{{ modelo.nombretitulo }}</h3>
+        <p>{{ modelo.descripcion }}</p>
+        <p><strong>{{ modelo.talles }}</strong></p>
+      </div>
+
+      <div class="modelo-fotos">
+        {% for producto in modelo.productos %}
+          <div class="producto">
+            <img src="{{ url_for('static', filename=producto.imagen) }}" alt="{{ producto.nombre }}">
+            <p>{{ producto.nombre }}</p>
+            <p>{{ producto.precio }}</p>                 
+            <p>{{ producto.Talles }}</p>    
+
+            <button onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}' )">Agregar al carrito
+            </button>
+          </div>
+       {% endfor %}
+      </div> 
+     </div>
+    </section>
 
 
 {% endfor %}
@@ -96,15 +93,9 @@
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }
 
-  function agregarAlCarrito(nombre, precio, grupoTalle){
-    const talleSeleccionado = document.querySelector(`input[name="${grupoTalle}"]:checked`);
-  
-    if (!talleSeleccionado) {
-      alert("Por favor seleccioná un talle 😅");
-      return;
-    }
-    
-    carrito.push({ nombre, precio,talle: talleSeleccionado.value  });
+  function agregarAlCarrito(nombre, precio){
+        
+    carrito.push({ nombre, precio});
     guardarCarrito();
     mostrarCarrito();
   }
@@ -116,7 +107,7 @@
 
     carrito.forEach((item, index) => {
       const li = document.createElement("li");
-      li.textContent = `${item.nombre} - ${item.precio} - Talle: ${item.talle}`;
+      li.textContent = `${item.nombre} - ${item.precio} `;
 
       const btnEliminar = document.createElement("button");
       btnEliminar.textContent = "❌";
@@ -144,7 +135,7 @@
 
     let mensaje = "Hola! Quisiera comprar los siguientes productos:%0A%0A";
     carrito.forEach((item, i) => {
-      mensaje += `${1}. ${item.nombre} - ${item.precio}%0A - ${item.talle} .`;
+      mensaje += `${1}. ${item.nombre} - ${item.precio}%0A .`;
     });
 
     const telefono = "5491122334455"; // Cambiá por el número del vendedor

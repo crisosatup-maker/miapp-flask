@@ -1,41 +1,42 @@
 {% extends 'index.html' %}
 
 {% block content %}
-  <h2 id="medias">Medias</h2>
+  <h2 id="novedades">Nuevos Ingresos!</h2>
 
-<div class="mini-menu-flotante">
-  <h6>Modelos de Medias: <h6>
-  <ul>
-    <li><a href="#medias">Inicio</a></li>
-    {% for modelo in modelos %}
-      <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
 
-{% for modelo in modelos %}
- <section class="categoria" id="modelo-{{ loop.index }}">
-    <div class="modelo-descripcion">
+  <div class="mini-menu-flotante">
+    <h6>Mirá nuestras novedades!: <h6>
+    <ul>
+      {% for modelo in modelos %}
+       <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% for modelo in modelos %}
+    <section class="categoria" id="modelo-{{ loop.index }}">
+      <div class="modelo-descripcion">
         <h3>{{ modelo.nombretitulo }}</h3>
         <p>{{ modelo.descripcion }}</p>
         <p><strong>{{ modelo.talles }}</strong></p>
       </div>
 
-    <div class="modelo-fotos">
-      {% for producto in modelo.productos %}
-        <div class="producto">
-          <img src="{{ url_for('static', filename=producto.imagen) }}" alt="{{ producto.nombre }}">
-          <p>{{ producto.nombre }}</p>
-          <p>{{ producto.precio }}</p>
-          
+      <div class="modelo-fotos">
+        {% for producto in modelo.productos %}
+          <div class="producto">
+            <img src="{{ url_for('static', filename=producto.imagen) }}" alt="{{ producto.nombre }}">
+            <p>{{ producto.nombre }}</p>
+            <p>{{ producto.precio }}</p>
+            
+           <button onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}' )">Agregar al carrito
+           </button>
+          </div>
+       {% endfor %}
+       
+     </div>
+    </section>
 
-          <button onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al carrito
-          </button>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+
 {% endfor %}
 
 <div id="modal-imagen" class="modal">
@@ -72,8 +73,10 @@
 
 
 
+
+
 <script>
-  let carrito = []; 
+  let carrito = [];
 
   // Cargar el carrito desde localStorage al abrir la página
   window.onload = function() {
@@ -88,10 +91,15 @@
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }
 
-  function agregarAlCarrito(nombre, precio) {
+  function agregarAlCarrito(nombre, precio, grupoTalle){
+    const talleSeleccionado = document.querySelector(`input[name="${grupoTalle}"]:checked`);
+  
+    if (!talleSeleccionado) {
+      alert("Por favor seleccioná un talle 😅");
+      return;
+    }
     
-    
-    carrito.push({ nombre, precio });
+    carrito.push({ nombre, precio,talle: talleSeleccionado.value  });
     guardarCarrito();
     mostrarCarrito();
   }
@@ -103,7 +111,7 @@
 
     carrito.forEach((item, index) => {
       const li = document.createElement("li");
-      li.textContent = `${item.nombre} - ${item.precio} `;
+      li.textContent = `${item.nombre} - ${item.precio} - Talle: ${item.talle}`;
 
       const btnEliminar = document.createElement("button");
       btnEliminar.textContent = "❌";
@@ -131,7 +139,7 @@
 
     let mensaje = "Hola! Quisiera comprar los siguientes productos:%0A%0A";
     carrito.forEach((item, i) => {
-      mensaje += `${i + 1}. ${item.nombre} - ${item.precio}%0A`;
+      mensaje += `${1}. ${item.nombre} - ${item.precio}%0A - ${item.talle} .`;
     });
 
     const telefono = "5491122334455"; // Cambiá por el número del vendedor
