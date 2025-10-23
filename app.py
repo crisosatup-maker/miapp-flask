@@ -205,7 +205,7 @@ def pijamas():
 @app.route('/novedades')
 def novedades():
     modelos_novedades = [
-         {
+        {
             "nombretitulo":"Conjunto deportivo",
             "descripcion":"Remeron + Biker + Medias media caña.",
             "talles":"-",
