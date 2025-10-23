@@ -149,7 +149,7 @@ nav a:hover {
 /*---------------CARRITO-------------*/
 #carrito {
   position: fixed;      /* Siempre visible */
-  top: 100px;           /* A partir de 100px desde arriba */
+  top: 150px;           /* A partir de 100px desde arriba */
   right: 20px;          /* A 20px del borde derecho */
   width: 200px;         /* Ancho del carrito */
   max-height: 400px;    /* Para que no ocupe toda la pantalla */
