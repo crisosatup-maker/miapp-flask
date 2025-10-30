@@ -10,6 +10,17 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/contactate')
+def contactate():
+    
+ return render_template('contactate.html')
+
+
+@app.route('/nosotros')
+def nosotros():
+    
+ return render_template('nosotros.html')
+
 @app.route('/sale')
 def sale():
      productos_sale = [

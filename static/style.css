@@ -14,7 +14,7 @@ header { /*margen superior rosa*/
 }
   
 
-/* Franja superior: Medialu izquierda, logo derecha */
+
 .header-superior {
   display: flex;
   justify-content: center; /* centra horizontalmente */
@@ -375,21 +375,27 @@ h6 {
   display: flex;
   flex-direction: column; /* 🔹 apila verticalmente */
   align-items: center;    /* 🔹 centra horizontalmente */
-  gap: 20px;              /* 🔹 espacio entre franja-nuevos y franja-promo */
-  margin-top: 20px;       /* opcional: separación con lo de arriba */
+  gap: 40px;              /* 🔹 espacio entre franja-nuevos y franja-promo */
+  margin-top: 30px;       /* opcional: separación con lo de arriba */
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 
 .franja-nuevos {
   background-color:#ffb7c3;
-  padding: 20px;
+  padding:  30px 50px;
   border-radius: 20px;
-  width: 300px;
+  width: 80%;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 800px;
+  
   
 }
 
@@ -401,15 +407,15 @@ h6 {
 
 .franja-promo {
   background-color:#b0f2c2;
-  padding: 20px;
+  padding:  30px 50px;
   border-radius: 20px;
-  width: 300px;
+  width: 80%;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+  max-width: 800px;
   
 }
 
@@ -542,3 +548,24 @@ h7{
   color: #ffb7c3;
 }
    
+
+pc{
+  display: block;             /* hace que cada <pc> ocupe toda la línea */
+  text-align: center;
+  color: #ff6961;
+  font-size: 20px;
+  margin: 10px 0;
+ 
+  
+}
+
+.informacion{
+  max-width: 800px;           /* ancho máximo del bloque */
+  margin: 40px auto;          /* centra horizontalmente y agrega margen superior */
+  padding: 30px;              /* espacio interno */
+  border: 2px solid #f3a6c5;  /* color del borde */
+  border-radius: 15px;        /* bordes redondeados */
+  background-color: #fff6fa;  /* color de fondo suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* sombra sutil */
+  text-align: center;
+}
