@@ -149,7 +149,7 @@ nav a:hover {
 /*---------------CARRITO-------------*/
 #carrito {
   position: fixed;      /* Siempre visible */
-  top: 150px;           /* A partir de 100px desde arriba */
+  top: 250px;           /* A partir de 100px desde arriba */
   right: 20px;          /* A 20px del borde derecho */
   width: 200px;         /* Ancho del carrito */
   max-height: 400px;    /* Para que no ocupe toda la pantalla */
@@ -297,7 +297,7 @@ html {
 /* Mini menú flotante */
 .mini-menu-flotante {
   position: fixed;   /* fijo en la pantalla */
-  top: 150px;        /* desde arriba */
+  top: 250px;        /* desde arriba */
   left: 10px;        /* desde la izquierda */
   background-color:white; /* fondo opcional */
   border:  5px solid #ffda9e;
@@ -380,7 +380,10 @@ h6 {
   text-align: center;
   justify-content: center;
   width: 100%;
-  margin: 0 auto;
+  max-width: 800px;        /* evita que sea demasiado grande en pantallas grandes */
+  margin: 20px auto;       /* centra horizontalmente */
+  padding: 20px;
+  
 }
 
 
