@@ -4,7 +4,6 @@ body {
   font-family: Arial,  sans-serif;
   margin: 0;
   padding: 0;
-
   width: 100%;
   height: 100%;
   scroll-snap-type: y mandatory;
@@ -37,9 +36,9 @@ header { /*margen superior rosa*/
   justify-content: space-between;
   align-items: center;
 }
-
+/*palevioletred*/
 .header-logo-fondo {
-  background: palevioletred url('{{ url_for("static", filename="imagen/logo.png") }}') no-repeat center center;
+  background:white url('{{ url_for("static", filename="imagen/logo.png") }}') no-repeat center center;
   background-size: contain; /* o cover si querés que se estire */
   height: 160px; /* podés ajustar este valor */
   display: flex;
@@ -73,7 +72,8 @@ header { /*margen superior rosa*/
 nav {
  
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 0px;
   background-color: #ffb7c3; /* para que sea del mismo color */
   padding-bottom: 45px 0 50px;
 
@@ -83,7 +83,7 @@ nav {
 nav a {
   color:black; /*INICIO MEDIAS PIJAMA SALE*/
   text-decoration: none;
-  margin:0 30x;
+  margin:0 30x; /*0 30px*/
   padding: 10px 15px;
   font-weight: bold;
   font-size: 25px;
@@ -222,7 +222,7 @@ button:hover {
 
 h2 {
   text-align: center;
-  color: #ffb7c3;
+  color:grey;
   font-size: 20px;
   margin-top: 30px;
   border:  5px solid #ffb7c3;
@@ -383,7 +383,7 @@ h6 {
 .contenedor-franjas {
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 40px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -420,7 +420,7 @@ h6 {
 /* Textos dentro de las franjas */
 .franja-nuevos h3,
 .franja-promo h3 {
-  font-size: 1.8em;
+  font-size: 2.2em;
   color: grey;
   font-weight: bold;
   margin-bottom: 15px;
@@ -429,7 +429,7 @@ h6 {
 .franja-nuevos p,
 .franja-promo p {
   color: grey;
-  font-size: 1.1em;
+  font-size: 1.3em;
   max-width: 90%;
   margin-bottom: 20px;
 }
@@ -446,7 +446,7 @@ h6 {
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.25);
   object-fit: cover; /* adapta mejor la imagen al recuadro */
-  opacity: 0.8; /* deja ver el color de fondo */
+  opacity: 0.9; /* deja ver el color de fondo */
   z-index: 1;
 }
 
@@ -456,6 +456,8 @@ h6 {
   .franja-nuevos,
   .franja-promo {
     height: 70vh; /* más baja en móvil */
+    width: 95%;
+    border-radius: 20px;
   }
 
   .franja-nuevos h3,
