@@ -73,9 +73,9 @@ header { /*margen superior rosa*/
 nav {
  
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: #ffb7c3; /* para que sea del mismo color */
-  padding-bottom: 50px 0 55px;
+  padding-bottom: 45px 0 50px;
 
 }
 
@@ -83,10 +83,10 @@ nav {
 nav a {
   color:black; /*INICIO MEDIAS PIJAMA SALE*/
   text-decoration: none;
-  margin:0 25x;
+  margin:0 30x;
   padding: 10px 15px;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 25px;
   
 }
 
@@ -436,7 +436,7 @@ h6 {
 /* Imagen dentro de cada franja */
 .franja-nuevos img,
 .franja-promo img {
-  width: 80%;
+  width: 100%;
   max-width: 450px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -451,7 +451,7 @@ h6 {
 
   .franja-nuevos img,
   .franja-promo img {
-    width: 90%;
+    width: 100%;
   }
 }
 
