@@ -5,7 +5,7 @@
     
 
 <div class="contenedor-franjas">
-  <div class="franja-nuevos">
+  <section class="franja-nuevos">
     <h3><a href="{{ url_for('novedades') }}" class="link-novedades">❤️‍🔥¡Nuevo ingreso!❤️‍🔥</a></h3>
     <p>Hace click aqui y mira todos los modelos de conjuntos deportivos!</p>
     <div class="slider">
@@ -15,15 +15,15 @@
       <img src="{{ url_for('static', filename='imgnovedades/depobellotamarron1.PNG') }}" alt="Nuevo producto 3">
 
     </div>
-  </div>
+  </section>
 
-  <div class="franja-promo">
+  <section class="franja-promo">
     <h3><a href="{{ url_for('sale') }}" class="link-promo">¡Promo!🚀</a></h3>
     <div class="slider">
       <img src="{{ url_for('static', filename='imgpromo/avisopromo.png') }}" alt="aviso">
       
     </div>
-  </div>
+  </section>
 </div>  
 </section>
 {% endblock %}

@@ -2,15 +2,22 @@
 
 body { 
   font-family: Arial,  sans-serif;
-  background-color:white;
   margin: 0;
   padding: 0;
+
+  width: 100%;
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  background-color: #ffdede
+  
+  
 }
 
 header { /*margen superior rosa*/
   color: purple;
-  background-color:white;
-  padding: 10px;
+  background-color:#ffdede; /*acaiba blanco*/
+  padding: 75px;
 }
   
 
@@ -68,7 +75,7 @@ nav {
   text-align: center;
   margin-top: 10px;
   background-color: #ffb7c3; /* para que sea del mismo color */
-  padding-bottom: 40px 0 45px;
+  padding-bottom: 50px 0 55px;
 
 }
 
@@ -79,7 +86,7 @@ nav a {
   margin:0 25x;
   padding: 10px 15px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 35px;
   
 }
 
@@ -371,81 +378,129 @@ h6 {
 }
 
 /* Franja de nuevos productos */
+/* 🔹 Contenedor general */
 .contenedor-franjas {
-  display: flex;
-  flex-direction: column; /* 🔹 apila verticalmente */
-  align-items: center;    /* 🔹 centra horizontalmente */
-  gap: 40px;              /* 🔹 espacio entre franja-nuevos y franja-promo */
-  margin-top: 30px;       /* opcional: separación con lo de arriba */
-  text-align: center;
-  justify-content: center;
   width: 100%;
-  max-width: 800px;        /* evita que sea demasiado grande en pantallas grandes */
-  margin: 20px auto;       /* centra horizontalmente */
-  padding: 20px;
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* -------- FRANJAS NUEVO INGRESO Y PROMO -------- */
+.contenedor-franjas {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.franja-nuevos {
-  background-color:#ffb7c3;
-  padding:  30px 50px;
-  border-radius: 20px;
-  width: 80%;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+/* Cada franja ocupa toda la pantalla */
+.franja-nuevos,
+.franja-promo {
+  width: 100%;
+  height: 100vh; /* ocupa todo el alto visible */
+  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  max-width: 800px;
-  
-  
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: start;
 }
 
-.franja-nuevos h3 {
-  color:grey;
-  font-weight: bold;
-  margin-bottom: 10px;
+/* Colores de fondo (en lugar de imágenes que estaban chicas) */
+.franja-nuevos {
+  background-color: #ffb7c3; /* rosa */
 }
 
 .franja-promo {
-  background-color:#b0f2c2;
-  padding:  30px 50px;
-  border-radius: 20px;
-  width: 80%;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 800px;
-  
+  background-color: #b0f2c2; /* verde */
 }
 
-.link-novedades {
-  color:grey;
-  text-decoration: none;
-}
-
-.link-novedades:hover {
-  text-decoration: underline; /* opcional */
-}
-
-
+/* Textos dentro de las franjas */
+.franja-nuevos h3,
 .franja-promo h3 {
-  color:grey;
+  font-size: 1.8em;
+  color: grey;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
+.franja-nuevos p,
+.franja-promo p {
+  color: grey;
+  font-size: 1.1em;
+  max-width: 90%;
+  margin-bottom: 20px;
+}
+
+/* Imagen dentro de cada franja */
+.franja-nuevos img,
+.franja-promo img {
+  width: 80%;
+  max-width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Ajuste para pantallas chicas */
+@media (max-width: 768px) {
+  .franja-nuevos h3,
+  .franja-promo h3 {
+    font-size: 1.5em;
+  }
+
+  .franja-nuevos img,
+  .franja-promo img {
+    width: 90%;
+  }
+}
+
+/* Fondo general rosa, sin espacio blanco */
+html, body {
+  background-color: #ffdede;
+  margin: 0;
+  padding: 0;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+
+/* 🔹 Links */
+.link-novedades,
 .link-promo {
-  color:grey;
+  color: white;
   text-decoration: none;
 }
+.link-novedades:hover,
 .link-promo:hover {
-  text-decoration: underline; /* opcional */
+  text-decoration: underline;
 }
 
+/* 🔹 Efecto de “pantalla a pantalla” */
+html, body {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+}
+
+.franja-nuevos,
+.franja-promo {
+  scroll-snap-align: start;
+}
+
+/* 🔹 Ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .franja-nuevos h3,
+  .franja-promo h3 {
+    font-size: 1.8em;
+  }
+
+  .franja-nuevos p,
+  .franja-promo p {
+    font-size: 1.1em;
+  }
+}
 
 /* Carrusel */
 .slider {

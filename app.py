@@ -254,17 +254,17 @@ def verano():
             "talles":"Talle único, abarca hasta un talle 6 de adulto..Medidas de frente-> ||hombro a hombro: 61cm.||Sisa a sisa: 68cm.||Largo: 98cm.",
             "productos":[
      
-                {"nombre": "Bata Corazones", "imagen": "imgverano/bcorazon.jpg", "precio": "$2,000"},
-                {"nombre": "Bata Paltas", "imagen": "imgverano/bpalta.jpg", "precio": "$4,000"},
-                {"nombre": "Bata Stitch", "imagen": "imgverano/bstitch.jpg", "precio": "$2,000"},
-                {"nombre": "Bata Harry Potter", "imagen": "imgverano/bharrypotter.jpg", "precio": "$4,000"},
-                {"nombre": "Bata Hello Kitty", "imagen": "imgverano/bkitty.jpg", "precio": "$2,000"},
-                {"nombre": "Bata Boca Junior", "imagen": "imgverano/bboca.jpg", "precio": "$4,000"},
-                {"nombre": "Bata River Plate", "imagen": "imgverano/briver.jpg", "precio": "$2,000"},
-                {"nombre": "Bata Luna", "imagen": "imgverano/bluna.jpg", "precio": "$4,000"},
-                {"nombre": "Bata Cerezas", "imagen": "imgverano/bcerezas.jpg", "precio": "$2,000"},
-                {"nombre": "Bata Candy", "imagen": "imgverano/bdulces.jpg", "precio": "$4,000"},
-                {"nombre": "Bata Mickey Mouse", "imagen": "imgverano/bmickey.jpg", "precio": "$4,000"}
+                {"nombre": "Bata Corazones", "imagen": "imgverano/bcorazon.jpg", "precio": "$28000"},
+                {"nombre": "Bata Paltas", "imagen": "imgverano/bpalta.jpg", "precio": "$28000"},
+                {"nombre": "Bata Stitch", "imagen": "imgverano/bstitch.jpg", "precio": "$28000"},
+                {"nombre": "Bata Harry Potter", "imagen": "imgverano/bharrypotter.jpg", "precio": "$28000"},
+                {"nombre": "Bata Hello Kitty", "imagen": "imgverano/bkitty.jpg", "precio": "$28000"},
+                {"nombre": "Bata Boca Junior", "imagen": "imgverano/bboca.jpg", "precio": "$28000"},
+                {"nombre": "Bata River Plate", "imagen": "imgverano/briver.jpg", "precio": "$28000"},
+                {"nombre": "Bata Luna", "imagen": "imgverano/bluna.jpg", "precio": "$28000"},
+                {"nombre": "Bata Cerezas", "imagen": "imgverano/bcerezas.jpg", "precio": "$28000"},
+                {"nombre": "Bata Candy", "imagen": "imgverano/bdulces.jpg", "precio": "$28000"},
+                {"nombre": "Bata Mickey Mouse", "imagen": "imgverano/bmickey.jpg", "precio": "$28000"}
             ]
         }
     ]
