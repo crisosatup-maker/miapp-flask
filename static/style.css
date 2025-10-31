@@ -458,11 +458,13 @@ h6 {
 @media (max-width: 768px) {
   .franja-nuevos,
   .franja-promo {
-    height: auto; /* más baja en móvil */
-    /*width: 95%;
-    border-radius: 20px;*/
-    padding: 15px 0 ;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 10px;
+    height: auto;
+    border-radius: 25px;
 
   .franja-nuevos h3,
   .franja-promo h3 {
@@ -475,16 +477,17 @@ h6 {
   .franja-promo p {
     font-size: 1.1em;
     margin-bottom: 10px;
+    text-align: center;
   }
 
   .franja-nuevos img,
   .franja-promo img {
-    width: 95%;
+    width: 90%;
+    max-width: none;
     height: auto;
-    margin-top: 500px;
     object-fit: cover;
     border-radius: 20px;
-    margin: 0 auto 10px;     /* 🔹 centrada con margen inferior */
+    margin: 0 auto;
     display: block;
     
   }
