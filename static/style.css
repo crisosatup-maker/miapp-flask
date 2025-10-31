@@ -401,11 +401,12 @@ h6 {
   overflow: hidden;
   position: relative;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   scroll-snap-align: start;
+  padding-top: 25px;
 }
 
 /* Colores de fondo (en lugar de imágenes que estaban chicas) */
@@ -423,31 +424,32 @@ h6 {
   font-size: 2.2em;
   color: grey;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
 
 .franja-nuevos p,
 .franja-promo p {
   color: grey;
+  font-size: 1.2em;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  margin: 0;
+  /*
   font-size: 1.3em;
   max-width: 90%;
-  margin-bottom: 20px;
+  margin-bottom: 20px;*/
 }
 
 /* Imagen dentro de cada franja */
 .franja-nuevos img,
 .franja-promo img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-width: 700px;
-  height: 100%; /* estaba en auto- mantiene proporción */
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  width: 92%;
+  height: 70%; /* estaba en auto- mantiene proporción */
+  border-radius: 15px;
+  box-shadow: none;
   object-fit: cover; /* adapta mejor la imagen al recuadro */
-  opacity: 0.9; /* deja ver el color de fondo */
-  z-index: 1;
+  margin-top: 20px;
 }
 
 /* Ajuste para pantallas chicas */
@@ -458,11 +460,14 @@ h6 {
     height: 70vh; /* más baja en móvil */
     width: 95%;
     border-radius: 20px;
+    padding-top: 15px;
   }
 
   .franja-nuevos h3,
   .franja-promo h3 {
-    font-size: 1.8em;
+    font-size: 1.9em;
+    justify-content: center;
+    align-items: center;
   }
 
   .franja-nuevos p,
@@ -473,7 +478,11 @@ h6 {
   .franja-nuevos img,
   .franja-promo img {
     width: 95%;
-    max-width: 450px;
+    height: 65%;
+    
+  }
+  .header-logo {
+    max-height: 100px; /* proporcional en móvil */
   }
 }
 
