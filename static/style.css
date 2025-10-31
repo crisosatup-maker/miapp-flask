@@ -377,14 +377,7 @@ h6 {
   line-height: 1.6;
 }
 
-/* Franja de nuevos productos */
-/* 🔹 Contenedor general */
-.contenedor-franjas {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 /* -------- FRANJAS NUEVO INGRESO Y PROMO -------- */
 .contenedor-franjas {
@@ -392,24 +385,32 @@ h6 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* separación entre franjas */
+  align-items: center;
 }
 
 /* Cada franja ocupa toda la pantalla */
 .franja-nuevos,
 .franja-promo {
-  width: 100%;
-  height: 100vh; /* ocupa todo el alto visible */
+  width: 90%;
+  height: 80vh; /* ocupa todo el alto visible */
   display: flex;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   scroll-snap-align: start;
 }
 
 /* Colores de fondo (en lugar de imágenes que estaban chicas) */
 .franja-nuevos {
-  background-color: #ffb7c3; /* rosa */
+  background-color: #ffe180; /* rosa */
 }
 
 .franja-promo {
@@ -436,22 +437,41 @@ h6 {
 /* Imagen dentro de cada franja */
 .franja-nuevos img,
 .franja-promo img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 450px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  max-width: 700px;
+  height: 100%; /* estaba en auto- mantiene proporción */
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  object-fit: cover; /* adapta mejor la imagen al recuadro */
+  opacity: 0.8; /* deja ver el color de fondo */
+  z-index: 1;
 }
 
 /* Ajuste para pantallas chicas */
+
 @media (max-width: 768px) {
+  .franja-nuevos,
+  .franja-promo {
+    height: 70vh; /* más baja en móvil */
+  }
+
   .franja-nuevos h3,
   .franja-promo h3 {
-    font-size: 1.5em;
+    font-size: 1.8em;
+  }
+
+  .franja-nuevos p,
+  .franja-promo p {
+    font-size: 1.1em;
   }
 
   .franja-nuevos img,
   .franja-promo img {
-    width: 100%;
+    width: 95%;
+    max-width: 450px;
   }
 }
 
@@ -487,20 +507,10 @@ html, body {
 .franja-nuevos,
 .franja-promo {
   scroll-snap-align: start;
+  height: 70vh; /* más baja en móvil */
 }
 
-/* 🔹 Ajustes en pantallas pequeñas */
-@media (max-width: 768px) {
-  .franja-nuevos h3,
-  .franja-promo h3 {
-    font-size: 1.8em;
-  }
 
-  .franja-nuevos p,
-  .franja-promo p {
-    font-size: 1.1em;
-  }
-}
 
 /* Carrusel */
 .slider {
