@@ -91,15 +91,10 @@
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }
 
-  function agregarAlCarrito(nombre, precio, grupoTalle){
-    const talleSeleccionado = document.querySelector(`input[name="${grupoTalle}"]:checked`);
-  
-    if (!talleSeleccionado) {
-      alert("Por favor seleccioná un talle 😅");
-      return;
-    }
+  function agregarAlCarrito(nombre, precio){
+       
     
-    carrito.push({ nombre, precio,talle: talleSeleccionado.value  });
+    carrito.push({ nombre, precio });
     guardarCarrito();
     mostrarCarrito();
   }
@@ -111,7 +106,7 @@
 
     carrito.forEach((item, index) => {
       const li = document.createElement("li");
-      li.textContent = `${item.nombre} - ${item.precio} - Talle: ${item.talle}`;
+      li.textContent = `${item.nombre} - ${item.precio} `;
 
       const btnEliminar = document.createElement("button");
       btnEliminar.textContent = "❌";
@@ -139,7 +134,7 @@
 
     let mensaje = "Hola! Quisiera comprar los siguientes productos:%0A%0A";
     carrito.forEach((item, i) => {
-      mensaje += `${1}. ${item.nombre} - ${item.precio}%0A - ${item.talle} .`;
+      mensaje += `${1}. ${item.nombre} - ${item.precio}%0A .`;
     });
 
     const telefono = "5492644691233"; // Cambiá por el número del vendedor
