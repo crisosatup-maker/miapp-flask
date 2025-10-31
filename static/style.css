@@ -444,12 +444,13 @@ h6 {
 /* Imagen dentro de cada franja */
 .franja-nuevos img,
 .franja-promo img {
-  width: 92%;
-  height: 70%; /* estaba en auto- mantiene proporción */
-  border-radius: 15px;
+  width: 95%;
+  height: 85%;          /* 🔹 ahora ocupa casi toda la franja */
+  object-fit: cover;     /* mantiene proporciones */
+  border-radius: 20px;   /* bordes suaves */
+  margin-top: 10px;      /* menos espacio arriba */
+  flex-grow: 1;          /* permite que crezca dentro del contenedor */
   box-shadow: none;
-  object-fit: cover; /* adapta mejor la imagen al recuadro */
-  margin-top: 20px;
 }
 
 /* Ajuste para pantallas chicas */
@@ -477,8 +478,9 @@ h6 {
 
   .franja-nuevos img,
   .franja-promo img {
-    width: 95%;
-    height: 65%;
+    width: 98%;
+    height: 88%;
+    margin-top: 5px;
     
   }
   .header-logo {
