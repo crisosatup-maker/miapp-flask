@@ -16,7 +16,8 @@ body {
 header { /*margen superior rosa*/
   color: purple;
   background-color:#ffdede; /*acaiba blanco*/
-  padding: 75px;
+  padding: 0;
+  margin: 0;
 }
   
 
@@ -25,8 +26,7 @@ header { /*margen superior rosa*/
   display: flex;
   justify-content: center; /* centra horizontalmente */
   align-items: center;      /* centra verticalmente */
-  padding: 0 50px;
-  height: 200px;
+  padding:30px 0;
   background-color: white; /*color blanco donde esta el logo*/
 
 }
@@ -39,12 +39,13 @@ header { /*margen superior rosa*/
 /*palevioletred*/
 .header-logo-fondo {
   background:white url('{{ url_for("static", filename="imagen/logo.png") }}') no-repeat center center;
-  background-size: contain; /* o cover si querés que se estire */
-  height: 160px; /* podés ajustar este valor */
+  padding: 20px 60px;
+  border-radius: 25px;       /* 🔹 mantiene bordes redondeados si ya los tenías */
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* para que el nav quede abajo */
-  color: purple;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;            /* 🔹 evita que se pegue a los bordes */
+  margin: 0 auto;            /* 🔹 centra el bloque */
 }
 
 .logo-nombre {
@@ -54,11 +55,11 @@ header { /*margen superior rosa*/
 }
 
 .header-logo {
-  width: 150px;
-  max-height: 180px;
+  width:200px;
+  
   height: auto;
-  object-fit: scale-down;
-  margin-top: 5px;
+  object-fit: contain;
+  
 }
 
 .nombre-local {
@@ -72,11 +73,12 @@ header { /*margen superior rosa*/
 nav {
  
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  
   background-color: #ffb7c3; /* para que sea del mismo color */
-  padding-bottom: 45px 0 50px;
-
+  padding:25px 0;
+  border-radius: 0;    /* 🔹 opcional, si querés bordes suaves */
+  box-shadow: none
 }
 
 
@@ -481,9 +483,11 @@ h6 {
 
   .franja-nuevos img,
   .franja-promo img {
-    width: 90%;         /* 🔹 un poco más chica */
-    height: auto;
-    object-fit: contain; /* 🔹 evita recortes */
+    width: 100%;
+    max-width: 500px;
+    height: 65vw;        /* 🔹 ajusta la altura según ancho del dispositivo */
+    object-fit: cover;   /* 🔹 llena el espacio */
+    border-radius: 20px;
   }
 
   .header-logo {
