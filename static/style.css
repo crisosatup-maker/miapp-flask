@@ -39,7 +39,7 @@ header { /*margen superior rosa*/
 /*palevioletred*/
 .header-logo-fondo {
   background:white url('{{ url_for("static", filename="imagen/logo.png") }}') no-repeat center center;
-  padding: 20px 60px;
+  padding: 30px 40px;
   border-radius: 25px;       /* 🔹 mantiene bordes redondeados si ya los tenías */
   display: flex;
   justify-content: center;
@@ -55,7 +55,7 @@ header { /*margen superior rosa*/
 }
 
 .header-logo {
-  width:200px;
+  width:250px;
   
   height: auto;
   object-fit: contain;
@@ -456,17 +456,13 @@ h6 {
 @media (max-width: 768px) {
   .franja-nuevos,
   .franja-promo {
-    width: 95%;
-    margin: 20px auto;
-    padding: 15px 5px;
-    
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 30px;
+  width: 80%;               /* 🔹 más ancha (antes probablemente 70%) */
+  max-width: 1000px;        /* 🔹 no se pasa de este tamaño */
+  margin: 40px auto;
+  padding: 40px 20px;       /* 🔹 reduce la altura total */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   }
 
   .franja-nuevos h3,
@@ -483,11 +479,13 @@ h6 {
 
   .franja-nuevos img,
   .franja-promo img {
-    width: 100%;
-    max-width: 500px;
-    height: 65vw;        /* 🔹 ajusta la altura según ancho del dispositivo */
-    object-fit: cover;   /* 🔹 llena el espacio */
-    border-radius: 20px;
+    width: 80%;               /* 🔹 agranda un poco la imagen */
+  max-width: 450px;         /* 🔹 tamaño máximo controlado */
+  height: auto;             /* 🔹 mantiene proporción */
+  border-radius: 15px;      /* 🔹 bordes suaves */
+  margin-top: 20px;
+  object-fit: contain;      /* 🔹 evita deformar */
+}
   }
 
   .header-logo {
