@@ -395,18 +395,16 @@ h6 {
 .franja-nuevos,
 .franja-promo {
   width: 90%;
-  height: 80vh; /* ocupa todo el alto visible */
+  margin: 20px auto;
+  padding: 25px 10px;
+  
+  border-radius: 25px;
   display: flex;
-  border-radius: 30px;
-  overflow: hidden;
-  position: relative;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  scroll-snap-align: start;
-  padding-top: 25px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* Colores de fondo (en lugar de imágenes que estaban chicas) */
@@ -444,13 +442,11 @@ h6 {
 /* Imagen dentro de cada franja */
 .franja-nuevos img,
 .franja-promo img {
-  width: 95%;
-  height: 85%;          /* 🔹 ahora ocupa casi toda la franja */
-  object-fit: cover;     /* mantiene proporciones */
-  border-radius: 20px;   /* bordes suaves */
-  margin-top: 10px;      /* menos espacio arriba */
-  flex-grow: 1;          /* permite que crezca dentro del contenedor */
-  box-shadow: none;
+  width: 92%;        /* 🔹 ocupa casi todo el ancho */
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover; /* 🔹 ajusta sin deformar */
+  margin-bottom: 10px;
 }
 
 /* Ajuste para pantallas chicas */
@@ -458,10 +454,10 @@ h6 {
 @media (max-width: 768px) {
   .franja-nuevos,
   .franja-promo {
-    width: 90%;
+    width: 95%;
     margin: 20px auto;
-    padding: 25px 10px;
-    background-color: #ffeb99; /* amarillo suave */
+    padding: 15px 5px;
+    
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -485,14 +481,11 @@ h6 {
 
   .franja-nuevos img,
   .franja-promo img {
-    width: 85%;
-   
+    width: 90%;         /* 🔹 un poco más chica */
     height: auto;
-    object-fit: cover;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    
+    object-fit: contain; /* 🔹 evita recortes */
   }
+
   .header-logo {
     max-height: 100px; /* proporcional en móvil */
   }
