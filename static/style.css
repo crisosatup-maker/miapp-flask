@@ -457,11 +457,10 @@ h6 {
   .franja-nuevos,
   .franja-promo {
     border-radius: 25px;
-    width: 85%;               /* 🔹 más ancha (antes probablemente 70%) */
-    max-width: 700px;        /* 🔹 no se pasa de este tamaño */
+    width: 90vw;               /* 🔹 más ancha (antes probablemente 70%) */
     margin: 20px auto;
     padding: 10px ; 
-    height: 85vw;       
+    height: 90vw;       
     text-align: center;
     display: flex;
     flex-direction: column;
