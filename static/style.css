@@ -160,7 +160,7 @@ nav a:hover {
   position: fixed;      /* Siempre visible */
   top: 250px;           /* A partir de 100px desde arriba */
   right: 20px;          /* A 20px del borde derecho */
-  width: 200px;         /* Ancho del carrito */
+  width: 250px;         /* Ancho del carrito */
   max-height: 400px;    /* Para que no ocupe toda la pantalla */
   overflow-y: auto;     /* Scroll si hay muchos productos */
   background-color: #fff;
@@ -175,7 +175,7 @@ nav a:hover {
     text-align: center;
     color:#b0c2f2;
     margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 25px;
   }
 
   #lista-carrito {
