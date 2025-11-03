@@ -456,12 +456,17 @@ h6 {
 @media (max-width: 768px) {
   .franja-nuevos,
   .franja-promo {
-    border-radius: 30px;
-    width: 80%;               /* 🔹 más ancha (antes probablemente 70%) */
-    max-width: 900px;        /* 🔹 no se pasa de este tamaño */
-    margin: 30px auto;
-    padding: 25px 10px;       /* 🔹 reduce la altura total */
+    border-radius: 25px;
+    width: 85%;               /* 🔹 más ancha (antes probablemente 70%) */
+    max-width: 700%;        /* 🔹 no se pasa de este tamaño */
+    aspect-ratio: 1 / 1;
+    margin: 20px auto;
+    padding: 15px ;       /* 🔹 reduce la altura total */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* 🔹 centra verticalmente el contenido */
+    align-items: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   }
 
@@ -479,7 +484,7 @@ h6 {
 
   .franja-nuevos img,
   .franja-promo img {
-    width: 95%;               /* 🔹 agranda un poco la imagen */
+    width: 150%;               /* 🔹 agranda un poco la imagen */
     max-width: 5200px;         /* 🔹 tamaño máximo controlado */
     height: auto;             /* 🔹 mantiene proporción */
     border-radius: 18px;      /* 🔹 bordes suaves */
