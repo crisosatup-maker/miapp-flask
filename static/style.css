@@ -456,8 +456,8 @@ h6 {
 @media (max-width: 768px) {
   .franja-nuevos,
   .franja-promo {
-    width: 90vw;
-    max-width: 400px;
+    width: 95vw;
+    max-width: 450px;
     aspect-ratio: 1 / 1;
     border-radius: 25px;
     display: flex;
@@ -479,10 +479,10 @@ h6 {
 
   .franja-nuevos p,
   .franja-promo p {
-    font-size: 1em;
+    font-size: 3em;
     margin-bottom: 8px;
   }
-  
+
   .franja-nuevos .texto,
   .franja-promo .texto {
     width: 100%;
@@ -499,7 +499,7 @@ h6 {
   .franja-nuevos img,
   .franja-promo img {
     width: 100%;
-    height: 60%;
+    height: 65%;
     object-fit: cover;        /* 🔹 llena el cuadrado sin deformar */
     border-radius: 0;    /* 🔹 evita deformar */
   }
