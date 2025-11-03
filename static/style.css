@@ -456,17 +456,19 @@ h6 {
 @media (max-width: 768px) {
   .franja-nuevos,
   .franja-promo {
-    width: 90vw;              /* casi todo el ancho */
-    max-width: 400px;         /* límite */
-    aspect-ratio: 1 / 1;      /* 🔹 cuadrado perfecto */
+    width: 90vw;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;  /* centra el contenido */
+    justify-content: flex-start; /* mantener el texto arriba */
     margin: 20px auto;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    overflow: hidden;         /* 🔹 evita que el contenido desborde */
+    overflow: hidden;
+    position: relative;
+    background-color: inherit; /* mantener color de franja */
   }
 
   .franja-nuevos h3,
@@ -480,11 +482,24 @@ h6 {
     font-size: 1em;
     margin-bottom: 8px;
   }
+  
+  .franja-nuevos .texto,
+  .franja-promo .texto {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    height: 40%;             /* ocupa el resto del cuadrado */
+    box-sizing: border-box;
+  }
 
   .franja-nuevos img,
   .franja-promo img {
     width: 100%;
-    height: 100%;
+    height: 60%;
     object-fit: cover;        /* 🔹 llena el cuadrado sin deformar */
     border-radius: 0;    /* 🔹 evita deformar */
   }
