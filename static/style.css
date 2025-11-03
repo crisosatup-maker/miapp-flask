@@ -382,106 +382,128 @@ h6 {
 
 
 /* -------- FRANJAS NUEVO INGRESO Y PROMO -------- */
-/* ===== FRANJAS NUEVO INGRESO Y PROMO ===== */
 .contenedor-franjas {
+  width: 100%;
+  margin: 0;
+  padding: 40px 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  gap: 30px; /* separación entre franjas */
   align-items: center;
-  gap: 30px;
-  padding: 40px 0;
-  width: 100%;
 }
 
-/* Cada franja cuadrada */
-.franja {
-  width: 90vw;              /* ocupa casi todo el ancho del móvil */
-  max-width: 400px;         /* límite en pantallas grandes */
-  aspect-ratio: 1 / 1;      /* 🔹 cuadrada */
+/* Cada franja ocupa toda la pantalla */
+.franja-nuevos,
+.franja-promo {
+  width: 90%;
+  margin: 20px auto;
+  padding: 25px 10px;
+  
   border-radius: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;         /* 🔹 para que la imagen no se salga */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-
-/* Fondos diferenciados */
-.franja.nuevos {
-  background-color: #ffe180;
-}
-.franja.promo {
-  background-color: #b0f2c2;
-}
-
-/* Texto sobre la imagen */
-.franja h3 {
-  position: absolute;
-  top: 10px;
-  width: 100%;
+  justify-content: flex-start;
   text-align: center;
-  color: white;
-  font-size: 1.4em;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Imagen cuadrada dentro */
-.franja img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        /* 🔹 llena el cuadrado sin deformar */
+/* Colores de fondo (en lugar de imágenes que estaban chicas) */
+.franja-nuevos {
+  background-color: #ffe180; /* rosa */
 }
 
-/* ===== Diseño responsive ===== */
-@media (min-width: 769px) {
-  .contenedor-franjas {
-    flex-direction: row;
+.franja-promo {
+  background-color: #b0f2c2; /* verde */
+}
+
+/* Textos dentro de las franjas */
+.franja-nuevos h3,
+.franja-promo h3 {
+  font-size: 2.2em;
+  color: grey;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+.franja-nuevos p,
+.franja-promo p {
+  color: grey;
+  font-size: 1.2em;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  margin: 0;
+  /*
+  font-size: 1.3em;
+  max-width: 90%;
+  margin-bottom: 20px;*/
+}
+
+/* Imagen dentro de cada franja */
+.franja-nuevos img,
+.franja-promo img {
+  width: 92%;        /* 🔹 ocupa casi todo el ancho */
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover; /* 🔹 ajusta sin deformar */
+  margin-bottom: 10px;
+}
+
+/* Ajuste para pantallas chicas */
+
+@media (max-width: 768px) {
+  .franja-nuevos,
+  .franja-promo {
+    width: 90vw;              /* casi todo el ancho */
+    max-width: 400px;         /* límite */
+    aspect-ratio: 1 / 1;      /* 🔹 cuadrado perfecto */
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* centra el contenido */
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    overflow: hidden;         /* 🔹 evita que el contenido desborde */
+  }
+
+  .franja-nuevos h3,
+  .franja-promo h3 {
+      font-size: 1.5em;
+      margin-bottom: 5px;
+  }
+
+  .franja-nuevos p,
+  .franja-promo p {
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+
+  .franja-nuevos img,
+  .franja-promo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* 🔹 llena el cuadrado sin deformar */
+    border-radius: 0;    /* 🔹 evita deformar */
+  }
+
+  .franja-nuevos .slider,
+  .franja-promo .slider {
+    width: 100%;
+    height: 100%;             /* 🔹 ocupa todo el espacio */
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
 
-  .franja {
-    width: 40%;
-    max-width: 400px;
+
+  .header-logo {
+    max-height: 100px; /* proporcional en móvil */
   }
 }
 
-
-/* Fondo general rosa, sin espacio blanco */
-html, body {
-  background-color: #ffdede;
-  margin: 0;
-  padding: 0;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
-
-
-/* 🔹 Links */
-.link-novedades,
-.link-promo {
-  color: white;
-  text-decoration: none;
-}
-.link-novedades:hover,
-.link-promo:hover {
-  text-decoration: underline;
-}
-
-/* 🔹 Efecto de “pantalla a pantalla” */
-html, body {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  margin: 0;
-  padding: 0;
-}
-
-.franja-nuevos,
-.franja-promo {
-  scroll-snap-align: start;
-  height: 70vh; /* más baja en móvil */
-}
 
 
 
