@@ -460,7 +460,8 @@ h6 {
     width: 85%;               /* 🔹 más ancha (antes probablemente 70%) */
     max-width: 700px;        /* 🔹 no se pasa de este tamaño */
     margin: 20px auto;
-    padding: 10px ;       /* 🔹 reduce la altura total */
+    padding: 10px ; 
+    height: 85vw;       
     text-align: center;
     display: flex;
     flex-direction: column;
