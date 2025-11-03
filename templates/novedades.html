@@ -5,11 +5,13 @@
 
 
   <div class="mini-menu-flotante">
-    <h6>Mirá nuestras novedades!: <h6>
-    <ul>
-      {% for modelo in modelos %}
-       <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
-      {% endfor %}
+    <button class="menu-toggle">VER⬇️</button>
+    <ul class="menu-list">
+        <h6>Mirá nuestras novedades!:<h6>
+         <li><a href="#novedades">Inicio</a></li>
+         {% for modelo in modelos %}
+         <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
+        {% endfor %}
     </ul>
   </div>
 
@@ -141,5 +143,14 @@
     const url = `https://wa.me/${telefono}?text=${mensaje}`;
     window.open(url, "_blank");
   }
+</script>
+
+<script>
+  const toggleButton = document.querySelector('.menu-toggle');
+  const menuList = document.querySelector('.menu-list');
+
+  toggleButton.addEventListener('click', () => {
+    menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
+  });
 </script>
 {% endblock %}

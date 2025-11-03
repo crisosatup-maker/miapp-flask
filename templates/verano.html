@@ -5,8 +5,9 @@
 
 
   <div class="mini-menu-flotante">
-    <h6>Mirá nuestros productos de verano!: <h6>
-    <ul>
+    <button class="menu-toggle">VER⬇️</button>
+    <ul class="menu-list">
+      <h6>Mirá nuestros productos de verano!: <h6>
       {% for modelo in modelos %}
        <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
       {% endfor %}
@@ -141,5 +142,14 @@
     const url = `https://wa.me/${telefono}?text=${mensaje}`;
     window.open(url, "_blank");
   }
+</script>
+
+<script>
+  const toggleButton = document.querySelector('.menu-toggle');
+  const menuList = document.querySelector('.menu-list');
+
+  toggleButton.addEventListener('click', () => {
+    menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
+  });
 </script>
 {% endblock %}

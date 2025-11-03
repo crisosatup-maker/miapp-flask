@@ -146,7 +146,7 @@ nav a:hover {
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;
-  width: 200px;
+  width: 300px;
   text-align: center;
 }
 
@@ -315,6 +315,34 @@ html {
   z-index: 1000;
 }
 
+.menu-toggle {
+  width: 100%;
+  padding: 8px;
+  background-color: #ffda9e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: gray;
+  font-size: 14px;
+}
+
+.menu-list {
+  list-style-type: disc;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: none; /* 🔹 oculto por defecto */
+}
+
+.menu-list li {
+  margin-bottom: 10px;
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: gray;
+}
+
 h6 {
   text-align: center;
   color:gray;
@@ -424,7 +452,7 @@ h6 {
   font-size: 2.2em;
   color: grey;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
 
@@ -432,13 +460,10 @@ h6 {
 .franja-promo p {
   color: grey;
   font-size: 1.2em;
-  color: #ffffff;
+  color: black  ;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
   margin: 0;
-  /*
-  font-size: 1.3em;
-  max-width: 90%;
-  margin-bottom: 20px;*/
+  
 }
 
 /* Imagen dentro de cada franja */
