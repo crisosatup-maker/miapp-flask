@@ -1,5 +1,3 @@
-
-
 body { 
   font-family: Arial,  sans-serif;
   margin: 0;
@@ -139,6 +137,10 @@ nav a:hover {
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+  margin-left: 10px;   /* antes podía ser 40px o más */
+  margin-right: 10px;
+  padding-left: 0;     /* opcional, si había padding interno */
+  padding-right: 0;
 }
 
 .producto {
@@ -146,8 +148,9 @@ nav a:hover {
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;
-  width: 300px;
+  width: 330px;
   text-align: center;
+  flex: 1 1 320px;
 }
 
 .producto img {
@@ -309,33 +312,49 @@ html {
   top: 250px;        /* desde arriba */
   left: 10px;        /* desde la izquierda */
   background-color:white; /* fondo opcional */
-  border:  5px solid #ffda9e;
-  border-radius: 10px;
-  padding: 10px;
+  border:  4px solid #ffda9e;
+  border-radius: 12px;
+  padding: 8px 10px;
   z-index: 1000;
+  width: 100px; /* 🔹 un poco más angosto */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  white-space: nowrap;
 }
 
 .menu-toggle {
   width: 100%;
-  padding: 8px;
+  padding: 14px 10px;
   background-color: #ffda9e;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   color: gray;
-  font-size: 14px;
+  font-size: 16px;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .menu-list {
   list-style-type: disc;
   padding: 0;
-  margin: 10px 0 0 0;
+  margin: 8px 0 0 15px;
   display: none; /* 🔹 oculto por defecto */
+  max-height: 110px; /* 🔹 más baja */
+  overflow-y: auto;  /* 🔹 aparece scroll si hay muchos ítems */
+  font-size: 13px;
+  line-height: 1.3; /* 🔹 más compacto */
+}
+
+/* Título dentro del menú */
+.menu-list strong {
+  display: block;
+  margin-bottom: 5px;
+  color: gray;
+  text-align: center;
 }
 
 .menu-list li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .menu-list a {
@@ -347,7 +366,7 @@ h6 {
   text-align: center;
   color:gray;
   font-size: 15px;
-  margin-top: 5px;
+  margin-top: 0px;
 } 
 
 /* Lista vertical, un item debajo del otro */
