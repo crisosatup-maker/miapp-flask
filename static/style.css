@@ -548,9 +548,20 @@ html {
     box-sizing: border-box;
   }
 
-  .franja-nuevos img,
-  .franja-promo img,
+
+/*PRUEBAAAA*/
   .franja-cm img {
+  object-fit: cover;
+  border: 2px dashed red; /* 🔹 solo para testeo */
+  }
+
+  .franja-cm .slider img {
+  opacity: 1 !important;
+  }
+/*PRUEBAAAA*/
+  
+  .franja-nuevos img,
+  .franja-promo img {
     width: 100%;
     height: 65%;
     object-fit: cover;        /* 🔹 llena el cuadrado sin deformar */
@@ -609,14 +620,17 @@ html {
   95% { opacity: 0; }     /* queda oculta */
   100% { opacity: 1; }    /* vuelve a aparecer */
 }
-/*
+
 .slider img:nth-child(1) { animation-delay: 0s; }
 .slider img:nth-child(2) { animation-delay: 7.5s; }
 .slider img:nth-child(3) { animation-delay: 15s; }
 .slider img:nth-child(4) { animation-delay: 22.5s; }
-*/
 
-.slider img:nth-child(1) {
+.slider img {
+  animation: sliderAnim 30s infinite;
+}
+
+/*.slider img:nth-child(1) {
   animation: sliderAnim 15s infinite;
 }
 
@@ -630,6 +644,11 @@ html {
   animation-delay: 10s;
 }
 
+.slider img:nth-child(4) {
+  animation: sliderAnim 15s infinite;
+  animation-delay: 12.5s;
+}
+*/
 h7{
   text-align: center;
   color: grey;
