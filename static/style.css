@@ -438,7 +438,8 @@ html {
 
 /* Cada franja ocupa toda la pantalla */
 .franja-nuevos,
-.franja-promo {
+.franja-promo,
+.franja-cm {
   width: 90%;
   margin: 20px auto;
   padding: 25px 10px;
@@ -454,7 +455,11 @@ html {
 
 /* Colores de fondo (en lugar de imágenes que estaban chicas) */
 .franja-nuevos {
-  background-color: #ffe180; /* rosa */
+  background-color:#f884d8; 
+}
+
+.franja-cm {
+  background-color:  #ffe180 ;
 }
 
 .franja-promo {
@@ -463,7 +468,8 @@ html {
 
 /* Textos dentro de las franjas */
 .franja-nuevos h3,
-.franja-promo h3 {
+.franja-promo h3,
+.franja-cm h3 {
   font-size: 2.2em;
   color: grey;
   font-weight: bold;
@@ -472,7 +478,8 @@ html {
 }
 
 .franja-nuevos p,
-.franja-promo p {
+.franja-promo p,
+.franja-cm p {
   color: grey;
   font-size: 1.2em;
   color: black  ;
@@ -483,7 +490,8 @@ html {
 
 /* Imagen dentro de cada franja */
 .franja-nuevos img,
-.franja-promo img {
+.franja-promo img,
+.franja-cm img {
   width: 92%;        /* 🔹 ocupa casi todo el ancho */
   height: auto;
   border-radius: 20px;
@@ -495,7 +503,8 @@ html {
 
 @media (max-width: 768px) {
   .franja-nuevos,
-  .franja-promo {
+  .franja-promo,
+  .franja-cm {
     width: 95vw;
     max-width: 450px;
     aspect-ratio: 1 / 1;
@@ -512,19 +521,22 @@ html {
   }
 
   .franja-nuevos h3,
-  .franja-promo h3 {
+  .franja-promo h3,
+  .franja-cm h3 {
       font-size: 1.5em;
       margin-bottom: 5px;
   }
 
   .franja-nuevos p,
-  .franja-promo p {
+  .franja-promo p,
+  .franja-cm p {
     font-size: 3em;
     margin-bottom: 8px;
   }
 
   .franja-nuevos .texto,
-  .franja-promo .texto {
+  .franja-promo .texto,
+  .franja-cm .texto {
     width: 100%;
     padding: 10px;
     text-align: center;
@@ -537,7 +549,8 @@ html {
   }
 
   .franja-nuevos img,
-  .franja-promo img {
+  .franja-promo img,
+  .franja-cm img {
     width: 100%;
     height: 65%;
     object-fit: cover;        /* 🔹 llena el cuadrado sin deformar */
@@ -545,7 +558,8 @@ html {
   }
 
   .franja-nuevos .slider,
-  .franja-promo .slider {
+  .franja-promo .slider,
+  .franja-cm .slider {
     width: 100%;
     height: 100%;             /* 🔹 ocupa todo el espacio */
     display: flex;
@@ -589,24 +603,25 @@ html {
 
 /* Animación automática */
 @keyframes sliderAnim {
-  0% { opacity: 1; }
-  33% { opacity: 0; }
-  66% { opacity: 0; }
-  100% { opacity: 1; }
+  0% { opacity: 1; }      /* visible */
+  45% { opacity: 1; }     /* sigue visible casi la mitad del tiempo */
+  50% { opacity: 0; }     /* se desvanece */
+  95% { opacity: 0; }     /* queda oculta */
+  100% { opacity: 1; }    /* vuelve a aparecer */
 }
 
 .slider img:nth-child(1) {
-  animation: sliderAnim 9s infinite;
+  animation: sliderAnim 15s infinite;
 }
 
 .slider img:nth-child(2) {
-  animation: sliderAnim 9s infinite;
-  animation-delay: 3s;
+  animation: sliderAnim 15s infinite;
+  animation-delay: 7.5s;
 }
 
 .slider img:nth-child(3) {
-  animation: sliderAnim 9s infinite;
-  animation-delay: 6s;
+  animation: sliderAnim 15s infinite;
+  animation-delay: 10s;
 }
 
 h7{
@@ -618,9 +633,9 @@ h7{
   border:  5px solid grey;
   border-radius: 10px;
   padding: 10px;
-  font-size:15px;
+  font-size:25px;
   margin-top: 30px;
-   }
+}
   
    /*VER IMAGEN GRANDE Y CERRAR CON CRUZ*/
 /* ----- MODAL DE IMAGEN ----- */
