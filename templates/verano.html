@@ -3,16 +3,19 @@
 {% block content %}
   <h2 id="verano">Verano</h2>
 
+   <!-- 🔹 BOTÓN FIJO EN EL COSTADO -->
+  <button id="botonVer" class="boton-ver">VER ⬅️</button>
 
-  <div class="mini-menu-flotante">
-    <button class="menu-toggle">VER⬇️</button>
+<!-- 🔹 PANEL LATERAL DESLIZABLE -->
+  <div class="mini-menu-flotante" id="panelMenu">
     <ul class="menu-list">
-      <h6>Mirá nuestros productos de verano!: <h6>
+      <h6>Mirá nuestros productos de verano!:</h6>
       {% for modelo in modelos %}
-       <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
+        <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
       {% endfor %}
     </ul>
   </div>
+
 
   {% for modelo in modelos %}
     <section class="categoria" id="modelo-{{ loop.index }}">
@@ -145,11 +148,21 @@
 </script>
 
 <script>
-  const toggleButton = document.querySelector('.menu-toggle');
-  const menuList = document.querySelector('.menu-list');
+  const boton = document.getElementById('botonVer');
+  const panel = document.getElementById('panelMenu');
 
-  toggleButton.addEventListener('click', () => {
-    menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
+  boton.addEventListener('click', (e) => {
+    e.stopPropagation(); // evita que se dispare el click del documento
+    panel.classList.toggle('activo');
+    boton.textContent = panel.classList.contains('activo') ? 'VER ⬅️' : 'VER ➡️';
+  });
+
+  // 🔹 Cierra el panel si se hace clic fuera de él o del botón
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && !boton.contains(e.target)) {
+      panel.classList.remove('activo');
+      boton.textContent = 'VER ➡️';
+    }
   });
 </script>
 {% endblock %}

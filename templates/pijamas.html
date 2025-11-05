@@ -4,13 +4,16 @@
   <h2 id="pijamas">Pijamas</h2>
 
 
-  <div class="mini-menu-flotante">
-    <button class="menu-toggle">VER⬇️</button>
+ <!-- 🔹 BOTÓN FIJO EN EL COSTADO -->
+  <button id="botonVer" class="boton-ver">VER ⬅️</button>
+
+<!-- 🔹 PANEL LATERAL DESLIZABLE -->
+  <div class="mini-menu-flotante" id="panelMenu">
     <ul class="menu-list">
-      <h6>Modelos de Pijamas: <h6>
+      <h6>Modelos de Pijamas:</h6>
       <li><a href="#pijamas">Inicio</a></li>
       {% for modelo in modelos %}
-       <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
+        <li><a href="#modelo-{{ loop.index }}">{{ modelo.nombretitulo }}</a></li>
       {% endfor %}
     </ul>
   </div>
@@ -48,6 +51,7 @@
 </div>
 
 <script>
+
   // Obtiene elementos
   const modal = document.getElementById("modal-imagen");
   const imgGrande = document.getElementById("imagen-grande");
@@ -73,8 +77,6 @@
     }
   });
 </script>
-
-
 
 
 
@@ -144,13 +146,26 @@
     window.open(url, "_blank");
   }
 </script>
-<script>
-  const toggleButton = document.querySelector('.menu-toggle');
-  const menuList = document.querySelector('.menu-list');
 
-  toggleButton.addEventListener('click', () => {
-    menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
+<script>
+  const boton = document.getElementById('botonVer');
+  const panel = document.getElementById('panelMenu');
+
+  boton.addEventListener('click', (e) => {
+    e.stopPropagation(); // evita que se dispare el click del documento
+    panel.classList.toggle('activo');
+    boton.textContent = panel.classList.contains('activo') ? 'VER ⬅️' : 'VER ➡️';
+  });
+
+  // 🔹 Cierra el panel si se hace clic fuera de él o del botón
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && !boton.contains(e.target)) {
+      panel.classList.remove('activo');
+      boton.textContent = 'VER ➡️';
+    }
   });
 </script>
+
+
 
 {% endblock %}
